@@ -24,24 +24,48 @@
         alert("Clicked Add Col"); // Replace this line with your code.
         numCols += 1;
         if (numRows == 0){
-            numRows = 1;
+            addR()
         }
-        const rows = document.querySelectorAll('tr');
-        console.log(rows);
-        for (let i = 0; i < rows.length; i++){
-            
-            let newCell = rows[i].appendChild(document.createElement('td'));
+        else{
+            const rows = document.querySelectorAll('tr');
+            console.log(rows);
+            for (let i = 0; i < rows.length; i++){
+                let newCell = rows[i].appendChild(document.createElement('td'));
+            }
         }
+       
+        
     }
 
     // Remove a row
     function removeR() {
         alert("Clicked Remove Row"); // Replace this line with your code.
+        if (numRows>0){
+            numRows -= 1;
+            let tableID = document.getElementById("grid");
+            tableID.deleteRow(0);
+            if(numRows==0){
+                numCols=0;
+                numRows=0;
+            }
+        }
     }
 
     // Remove a column
     function removeC() {
         alert("Clicked Remove Col"); // Replace this line with your code.
+        if (numCols>0){
+            numCols -= 1;
+        const rows = document.querySelectorAll('tr');
+        console.log(rows);
+        for (let i = 0; i < rows.length; i++){
+            let newCell = rows[i].removeChild(rows[i].lastElementChild);
+        }
+        if (numCols==0){
+            numRows=0
+            numCols=0
+        }
+        } 
     }
 
     // Set global variable for selected color
