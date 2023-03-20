@@ -5,7 +5,6 @@
 
     // Add a row
     function addR() {
-        alert("Clicked Add Row"); // Replace this line with your code.
         numRows += 1;
         if (numCols == 0){
             numCols = 1;
@@ -15,13 +14,15 @@
         newRow.id = 'row';
         for (let i = 0; i < numCols; i++){
             let newCell = newRow.insertCell(0);
+            newCell.onclick=function(){
+                this.style.backgroundColor = colorSelected;
+            }
         }
         
     }
 
     // Add a column
     function addC() {
-        alert("Clicked Add Col"); // Replace this line with your code.
         numCols += 1;
         if (numRows == 0){
             addR()
@@ -31,6 +32,9 @@
             console.log(rows);
             for (let i = 0; i < rows.length; i++){
                 let newCell = rows[i].appendChild(document.createElement('td'));
+                newCell.onclick=function(){
+                    this.style.backgroundColor = colorSelected;
+                }
             }
         }
        
@@ -39,7 +43,6 @@
 
     // Remove a row
     function removeR() {
-        alert("Clicked Remove Row"); // Replace this line with your code.
         if (numRows>0){
             numRows -= 1;
             let tableID = document.getElementById("grid");
@@ -53,7 +56,6 @@
 
     // Remove a column
     function removeC() {
-        alert("Clicked Remove Col"); // Replace this line with your code.
         if (numCols>0){
             numCols -= 1;
         const rows = document.querySelectorAll('tr');
