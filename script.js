@@ -82,14 +82,28 @@
     // Fill all uncolored cells
     function fillU(){
         alert("Clicked Fill All Uncolored"); // Replace this line with your code.
+        const cells = document.querySelectorAll('td');
+        cells.forEach(function(cell){
+            if(cell.style.backgroundColor == "white"){
+                cell.style.backgroundColor=colorSelected
+            }
+        })
     }
 
     // Fill all cells
     function fillAll(){
         alert("Clicked Fill All"); // Replace this line with your code.
+        const cells = document.querySelectorAll('td');
+        cells.forEach(function(cell){
+            cell.style.backgroundColor=colorSelected
+        })
     }
 
     // Clear all cells
     function clearAll(){
         alert("Clicked Clear All"); // Replace this line with your code.
+        const cells = document.querySelectorAll('td');
+        cells.forEach(function(cell){
+            cell.style.backgroundColor="white"
+        })
     }
