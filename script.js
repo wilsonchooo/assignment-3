@@ -18,7 +18,6 @@
                 this.style.backgroundColor = colorSelected;
             }
         }
-        
     }
 
     // Add a column
@@ -37,8 +36,6 @@
                 }
             }
         }
-       
-        
     }
 
     // Remove a row
@@ -84,7 +81,7 @@
         // alert("Clicked Fill All Uncolored"); // Replace this line with your code.
         const cells = document.querySelectorAll('td');
         cells.forEach(function(cell){
-            if(cell.style.backgroundColor == "white"){
+            if(cell.style.backgroundColor == "white" || cell.style.backgroundColor == ""){
                 cell.style.backgroundColor=colorSelected
             }
         })
