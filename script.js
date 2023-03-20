@@ -64,6 +64,9 @@
         if (numCols==0){
             numRows=0
             numCols=0
+            for (let k =0;k<rows.length;k++){
+                rows[k].remove()
+            }
         }
         } 
     }
